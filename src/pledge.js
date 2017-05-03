@@ -5,10 +5,24 @@ Promises Workshop: build the pledge.js ES6-style promise library
 // YOUR CODE HERE:
 
 class $Promise {
-    constructor() {
-            //properties
+    constructor(executor) {
+        // if (executor) console.dir(executor);
+        this._state = 'pending';
+        this._value = null;
+        if (executor) this._futureVal = executor();
+    }
+    _internalResolve(obj) {
+        if (this._state === 'pending') {
+            this._value = obj;
+            this._state = 'fulfilled';
         }
-        //proto methods
+    }
+    _internalReject(obj) {
+        if (this._state === 'pending') {
+            this._value = obj;
+            this._state = 'rejected';
+        }
+    }
 }
 
 
