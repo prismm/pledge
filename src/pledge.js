@@ -4,6 +4,12 @@ Promises Workshop: build the pledge.js ES6-style promise library
 ----------------------------------------------------------------*/
 // YOUR CODE HERE:
 
+class $Promise {
+    constructor() {
+            //properties
+        }
+        //proto methods
+}
 
 
 
